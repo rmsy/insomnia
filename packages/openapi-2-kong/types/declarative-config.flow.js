@@ -6,6 +6,7 @@ declare type DCPlugin = {|
   config?: {
     [string]: Object,
   },
+  tags?: Array<string>,
 |};
 
 declare type DCRoute = {|

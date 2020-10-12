@@ -23,15 +23,11 @@ export function generatePlugins(item: Object, generator: GeneratorFn): Array<DCP
 }
 
 export function generatePlugin(key: string, value: Object): DCPlugin {
-  const plugin: DCPlugin = {
+  return {
     name: value.name || getPluginNameFromKey(key),
+    config: value.config,
+    tags: value.tags,
   };
-
-  if (value.config) {
-    plugin.config = value.config;
-  }
-
-  return plugin;
 }
 
 export function generateRequestValidatorPlugin(obj: Object, operation: OA3Operation): DCPlugin {
